@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Transformación Operativa CIT</title>
+<meta name="description" content="Propuesta ejecutiva de transformación operativa para CIT: procesos, indicadores, ejecución, liderazgo y cultura.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="stylesheet" href="css/estilos.css">
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+<a class="saltar" href="#inicio">Saltar al contenido</a>
+<div class="progreso" aria-hidden="true"><div class="progreso-barra" id="progreso-barra"></div></div>
+
+<aside class="menu" id="menu" aria-label="Navegación de la presentación">
+  <div class="menu-marca">
+    <span class="logo-texto">Andreani</span>
+    <span class="menu-proyecto">Transformación Operativa CIT</span>
+  </div>
+  <nav aria-label="Pantallas"><ol class="menu-lista" id="menu-lista"></ol></nav>
+  <p class="menu-pie"><span id="menu-contador">1 / 18</span></p>
+</aside>
+
+<header class="controles" aria-label="Controles de la presentación">
+  <button class="btn-icono solo-movil" id="btn-menu" type="button" aria-label="Abrir menú de pantallas" aria-expanded="false" aria-controls="menu"><i data-i="menu"></i></button>
+  <div class="modos" role="group" aria-label="Modo de visualización">
+    <button class="modo" id="btn-directorio" type="button" aria-pressed="true"><i data-i="directorio"></i><span>Directorio</span></button>
+    <button class="modo" id="btn-presentacion" type="button" aria-pressed="false"><i data-i="presentacion"></i><span>Presentación</span></button>
+  </div>
+  <button class="btn-icono" id="btn-indice" type="button" aria-label="Índice de pantallas (tecla D)" aria-haspopup="dialog"><i data-i="indice"></i></button>
+  <button class="btn-icono" id="btn-completa" type="button" aria-label="Pantalla completa (tecla F)"><i data-i="completa"></i></button>
+</header>
+
+<main id="principal">
+
+<!-- 1 -->
+<section class="pantalla portada" id="inicio" data-titulo="Inicio">
+  <div class="contenido portada-grid">
+    <div class="revelar">
+      <p class="sobretitulo">Propuesta de transformación</p>
+      <h1>Transformación Operativa <span class="acento">CIT</span></h1>
+      <p class="bajada">Reconstruyendo una operación diseñada para ser referente de eficiencia, fluidez y excelencia operacional.</p>
+      <div class="apertura">
+        <p>Toda operación tiene un propósito.</p>
+        <p>CIT nació para <strong>acelerar el flujo de la red</strong>.</p>
+        <p>Hoy existe una oportunidad para recuperar esa esencia.</p>
+      </div>
+      <p class="dato-real" data-ejemplo><span class="num" data-kpi="volumen">50.000</span> envíos por día pasan por CIT</p>
+    </div>
+    <figure class="flujo revelar" aria-label="Animación: envíos que fluyen por la red y convergen en CIT">
+      <svg viewBox="0 0 520 420" role="img" aria-labelledby="flujo-t" id="svg-flujo">
+        <title id="flujo-t">Red logística con CIT en el centro</title>
+        <g fill="none" stroke="#c0c3c8" stroke-width="2">
+          <path id="r1" d="M60 70 C160 90 200 180 260 210"/>
+          <path id="r2" d="M40 330 C140 300 200 240 260 210"/>
+          <path id="r3" d="M260 210 C330 170 380 90 470 60"/>
+          <path id="r4" d="M260 210 C340 240 400 320 480 350"/>
+          <path id="r5" d="M260 30 C255 100 262 150 260 210"/>
+          <path id="r6" d="M260 210 C262 280 255 340 260 395"/>
+        </g>
+        <g fill="#1f2856">
+          <circle cx="60" cy="70" r="9"/><circle cx="40" cy="330" r="9"/><circle cx="470" cy="60" r="9"/>
+          <circle cx="480" cy="350" r="9"/><circle cx="260" cy="30" r="9"/><circle cx="260" cy="395" r="9"/>
+        </g>
+        <g fill="#e86427">
+          <circle r="5"><animateMotion dur="3.2s" repeatCount="indefinite"><mpath href="#r1"/></animateMotion></circle>
+          <circle r="5"><animateMotion dur="3.8s" begin="0.6s" repeatCount="indefinite"><mpath href="#r2"/></animateMotion></circle>
+          <circle r="5"><animateMotion dur="3s" begin="1.1s" repeatCount="indefinite"><mpath href="#r3"/></animateMotion></circle>
+          <circle r="5"><animateMotion dur="3.5s" begin="0.3s" repeatCount="indefinite"><mpath href="#r4"/></animateMotion></circle>
+          <circle r="5"><animateMotion dur="2.8s" begin="1.5s" repeatCount="indefinite"><mpath href="#r5"/></animateMotion></circle>
+          <circle r="5"><animateMotion dur="3.1s" begin="0.9s" repeatCount="indefinite"><mpath href="#r6"/></animateMotion></circle>
+        </g>
+        <circle cx="260" cy="210" r="62" fill="#fbe8e9"/>
+        <circle cx="260" cy="210" r="46" fill="#d71920"/>
+        <text x="260" y="220" text-anchor="middle" fill="#ffffff" font-size="28" font-weight="700" font-family="Rubik, system-ui, sans-serif">CIT</text>
+      </svg>
+    </figure>
+  </div>
+  <a class="seguir" href="#oportunidad" aria-label="Ir a la siguiente pantalla"><i data-i="abajo"></i></a>
+</section>
+
+<!-- 2 -->
+<section class="pantalla" id="oportunidad" data-titulo="La oportunidad">
+  <div class="contenido">
+    <p class="sobretitulo revelar">La oportunidad de transformación</p>
+    <h2 class="revelar">¿Por qué hablar de transformación?</h2>
+    <div class="comparativa">
+      <article class="tarjeta revelar">
+        <h3>CIT fue concebido como</h3>
+        <ul class="lista-check">
+          <li><i data-i="tecnologia"></i>Tecnología</li>
+          <li><i data-i="automatizacion"></i>Automatización</li>
+          <li><i data-i="escala"></i>Escalabilidad</li>
+          <li><i data-i="flujo"></i>Flujo</li>
+        </ul>
+      </article>
+      <div class="vs revelar" aria-hidden="true">vs</div>
+      <article class="tarjeta tarjeta-gris revelar" data-ejemplo>
+        <h3>Pero hoy la percepción interna es diferente</h3>
+        <div class="barras" aria-label="Capacidad de diseño frente a capacidad real">
+          <div class="barra-fila"><span>Capacidad de diseño</span><div class="barra"><div class="barra-relleno azul" id="barra-disenio"></div></div><strong><span data-kpi="capDisenio">4.000</span> env/h</strong></div>
+          <div class="barra-fila"><span>Capacidad real</span><div class="barra"><div class="barra-relleno rojo" id="barra-real"></div></div><strong><span data-kpi="capReal">2.800</span> env/h</strong></div>
+        </div>
+        <p class="dato-grande"><span class="num" data-kpi="usoCapacidad">70 %</span> de la capacidad para la que fue diseñado</p>
+      </article>
+    </div>
+    <blockquote class="frase revelar">Cuando una operación diseñada para fluir comienza a ralentizar la red, aparece una oportunidad de transformación.</blockquote>
+  </div>
+</section>
+
+<!-- 3 -->
+<section class="pantalla" id="diagnostico" data-titulo="Diagnóstico">
+  <div class="contenido">
+    <p class="sobretitulo revelar">Diagnóstico actual</p>
+    <h2 class="revelar">Lo que observamos hoy</h2>
+    <p class="bajada revelar">No son fallas individuales: son síntomas de un sistema de gestión que necesita actualizarse.</p>
+    <ol class="grilla-5">
+      <li class="tarjeta hallazgo revelar"><span class="nro">01</span><i data-i="procesos"></i><p>Cumplimiento inconsistente de procesos</p></li>
+      <li class="tarjeta hallazgo revelar"><span class="nro">02</span><i data-i="visibilidad"></i><p>Escasa visibilidad punta a punta</p></li>
+      <li class="tarjeta hallazgo revelar"><span class="nro">03</span><i data-i="reloj"></i><p>Ejecución desigual entre sectores y turnos</p></li>
+      <li class="tarjeta hallazgo revelar"><span class="nro">04</span><i data-i="distancia"></i><p>Distancia entre conducción y operación</p></li>
+      <li class="tarjeta hallazgo revelar"><span class="nro">05</span><i data-i="herramienta"></i><p>Liderazgos con necesidad de nuevas herramientas de gestión</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- 4 -->
+<section class="pantalla" id="evidencia" data-titulo="La evidencia">
+  <div class="contenido">
+    <p class="sobretitulo revelar">La evidencia</p>
+    <h2 class="revelar">Lo que dicen los números</h2>
+    <div class="grilla-kpi">
+      <article class="kpi revelar" data-ejemplo><i data-i="reloj"></i><p class="num" data-kpi="salidas">82 %</p><p>salidas a tiempo<br><small>objetivo 95 %</small></p></article>
+      <article class="kpi revelar" data-ejemplo><i data-i="flujo"></i><p class="num" data-kpi="permanencia">9,5 h</p><p>permanencia promedio<br><small>diseño 4 h</small></p></article>
+      <article class="kpi revelar" data-ejemplo><i data-i="datos"></i><p class="num" data-kpi="brechaTurnos">34 %</p><p>brecha de productividad<br><small>entre turnos</small></p></article>
+      <article class="kpi revelar" data-ejemplo><i data-i="alerta"></i><p class="num" data-kpi="errores">1,8 %</p><p>envíos con error<br><small>≈ <span data-kpi="erroresDia">900</span> por día</small></p></article>
+      <article class="kpi revelar" data-ejemplo><i data-i="procesos"></i><p class="num" data-kpi="adherencia">61 %</p><p>adherencia<br><small>a procedimientos</small></p></article>
+      <article class="kpi revelar" data-ejemplo><i data-i="lider"></i><p class="num" data-kpi="lideresPiso">25 %</p><p>del tiempo de los líderes<br><small>en el piso operativo</small></p></article>
+    </div>
+    <p class="nota revelar">Las cifras marcadas «Ejemplo» son ilustrativas y se reemplazarán por datos reales.</p>
+  </div>
+</section>
+
+<!-- 5 -->
+<section class="pantalla" id="desafio" data-titulo="El desafío">
+  <div class="contenido">
+    <p class="sobretitulo revelar">El problema real</p>
+    <h2 class="revelar">El desafío no es tecnológico</h2>
+    <div class="ecuacion revelar" aria-label="Infraestructura más procesos más indicadores más liderazgo más cultura es igual a resultado operativo">
+      <span class="factor tenue"><i data-i="infraestructura"></i>Infraestructura</span><b aria-hidden="true">+</b>
+      <span class="factor"><i data-i="procesos"></i>Procesos</span><b aria-hidden="true">+</b>
+      <span class="factor"><i data-i="indicador"></i>Indicadores</span><b aria-hidden="true">+</b>
+      <span class="factor"><i data-i="lider"></i>Liderazgo</span><b aria-hidden="true">+</b>
+      <span class="factor"><i data-i="cultura"></i>Cultura</span><b aria-hidden="true">=</b>
+      <span class="factor resultado"><i data-i="objetivo"></i>Resultado operativo</span>
+    </div>
+    <div class="dos-col">
+      <div class="revelar" data-ejemplo>
+        <h3>Potencial de mejora por factor</h3>
+        <div class="barras" id="barras-potencial"></div>
+      </div>
+      <div class="destacado revelar">
+        <p class="num grande" id="potencial-gestion">90 %</p>
+        <p>del potencial de mejora está en los <strong>factores humanos y de gestión</strong>.</p>
+        <p class="tenue-texto">La infraestructura ya existe. Lo que falta es la forma de gestionarla.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6 -->
+<section class="pantalla" id="vision" data-titulo="Visión">
+  <div class="contenido">
+    <p class="sobretitulo revelar">Visión objetivo</p>
+    <h2 class="revelar">¿Qué queremos que sea CIT?</h2>
+    <div class="antes-despues revelar" role="table" aria-label="Hoy y la CIT que queremos">
+      <div class="ad-cab" role="row"><span role="columnheader">Hoy</span><span aria-hidden="true"></span><span role="columnheader">La CIT que queremos</span></div>
+      <div class="ad-fila" role="row"><span role="cell">Flujo que se frena</span><i data-i="flecha"></i><span role="cell"><i data-i="flujo"></i>Flujo previsible</span></div>
+      <div class="ad-fila" role="row"><span role="cell">Decisiones por percepción</span><i data-i="flecha"></i><span role="cell"><i data-i="datos"></i>Gestionada con datos</span></div>
+      <div class="ad-fila" role="row"><span role="cell">Información dispersa</span><i data-i="flecha"></i><span role="cell"><i data-i="indicador"></i>Indicadores claros</span></div>
+      <div class="ad-fila" role="row"><span role="cell">Conducción lejos del piso</span><i data-i="flecha"></i><span role="cell"><i data-i="lider"></i>Líderes cercanos</span></div>
+      <div class="ad-fila" role="row"><span role="cell">Planes que no se cierran</span><i data-i="flecha"></i><span role="cell"><i data-i="rayo"></i>Capacidad de ejecución</span></div>
+      <div class="ad-fila" role="row"><span role="cell">Equipos desgastados</span><i data-i="flecha"></i><span role="cell"><i data-i="personas"></i>Equipos comprometidos</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 7 -->
+<section class="pantalla" id="modelo" data-titulo="Modelo">
+  <div class="contenido">
+    <p class="sobretitulo revelar">Modelo de transformación</p>
+    <h2 class="revelar">Propuesta de abordaje</h2>
+    <div class="templo revelar">
+      <div class="techo">CIT, referencia operacional de la red</div>
+      <div class="pilares">
+        <a class="pilar" href="#pilar-1"><span class="nro">Pilar 1</span><i data-i="lupa"></i><strong>Inteligencia Operativa</strong></a>
+        <a class="pilar" href="#pilar-2"><span class="nro">Pilar 2</span><i data-i="rayo"></i><strong>Transformación y Ejecución</strong></a>
+        <a class="pilar" href="#pilar-3"><span class="nro">Pilar 3</span><i data-i="lider"></i><strong>Desarrollo de Liderazgo</strong></a>
+        <a class="pilar" href="#pilar-4"><span class="nro">Pilar 4</span><i data-i="cascada"></i><strong>Despliegue Estratégico</strong></a>
+      </div>
+      <div class="base">Cultura y personas</div>
+    </div>
+    <p class="bajada revelar centrado">Cinco frentes en simultáneo: procesos, indicadores, ejecución, liderazgo y cultura.</p>
+  </div>
+</section>
+
+<!-- 8 -->
+<section class="pantalla" id="pilar-1" data-titulo="Pilar 1 · Inteligencia">
+  <div class="contenido pilar-grid">
+    <div class="revelar">
+      <p class="sobretitulo">Pilar 1</p>
+      <h2>Inteligencia Operativa</h2>
+      <p class="objetivo"><i data-i="objetivo"></i>Tomar decisiones basadas en evidencias.</p>
+      <ul class="lista-items">
+        <li><i data-i="indicador"></i>KPIs end-to-end</li>
+        <li><i data-i="alerta"></i>Cuellos de botella</li>
+        <li><i data-i="lupa"></i>Análisis causa raíz</li>
+        <li><i data-i="visibilidad"></i>Detección temprana de desvíos</li>
+        <li><i data-i="datos"></i>Priorización impacto-esfuerzo</li>
+        <li><i data-i="bandera"></i>Roadmap de mejora</li>
+      </ul>
+    </div>
+    <figure class="visual revelar" aria-label="Matriz impacto-esfuerzo">
+      <div class="matriz">
+        <span class="eje-y">Impacto</span><span class="eje-x">Esfuerzo</span>
+        <div class="cuad q1">Ganancias rápidas</div><div class="cuad q2">Proyectos clave</div>
+        <div class="cuad q3">Ajustes menores</div><div class="cuad q4">Postergar</div>
+      </div>
+    </figure>
+    <blockquote class="frase revelar ancho">No gestionar percepciones. Gestionar realidades.</blockquote>
+  </div>
+</section>
+
+<!-- 9 -->
+<section class="pantalla" id="pilar-2" data-titulo="Pilar 2 · Ejecución">
+  <div class="contenido pilar-grid">
+    <div class="revelar">
+      <p class="sobretitulo">Pilar 2</p>
+      <h2>Transformación y Ejecución</h2>
+      <p class="objetivo"><i data-i="objetivo"></i>Convertir diagnósticos en resultados.</p>
+      <ul class="lista-items">
+        <li><i data-i="procesos"></i>Planes de acción</li>
+        <li><i data-i="calendario"></i>Seguimiento</li>
+        <li><i data-i="bandera"></i>Gestión de iniciativas</li>
+        <li><i data-i="ciclo"></i>Mejora continua</li>
+        <li><i data-i="apoyo"></i>Acompañamiento al cambio</li>
+        <li><i data-i="check"></i>Validación de beneficios</li>
+      </ul>
+    </div>
+    <figure class="visual revelar" aria-label="Ciclo de mejora: planificar, hacer, verificar, actuar">
+      <div class="ciclo">
+        <span class="paso p1">Planificar</span><span class="paso p2">Hacer</span>
+        <span class="paso p3">Verificar</span><span class="paso p4">Actuar</span>
+        <span class="centro"><i data-i="ciclo"></i></span>
+      </div>
+    </figure>
+    <blockquote class="frase revelar ancho">La diferencia entre una idea y un resultado es la ejecución.</blockquote>
+  </div>
+</section>
+
+<!-- 10 -->
+<section class="pantalla" id="pilar-3" data-titulo="Pilar 3 · Liderazgo">
+  <div class="contenido pilar-grid">
+    <div class="revelar">
+      <p class="sobretitulo">Pilar 3</p>
+      <h2>Desarrollo de Liderazgo</h2>
+      <p class="objetivo"><i data-i="objetivo"></i>Construir líderes que multipliquen resultados.</p>
+      <ul class="lista-items">
+        <li><i data-i="apoyo"></i>Coaching operativo</li>
+        <li><i data-i="mensaje"></i>Comunicación</li>
+        <li><i data-i="ciclo"></i>Feedback</li>
+        <li><i data-i="escudo"></i>Gestión de conflictos</li>
+        <li><i data-i="check"></i>Accountability</li>
+        <li><i data-i="escala"></i>Desarrollo de supervisión y jefaturas</li>
+      </ul>
+    </div>
+    <figure class="visual revelar" aria-label="Pirámide de liderazgo">
+      <ol class="piramide">
+        <li style="--w:38%">Visión</li>
+        <li style="--w:56%">Ejemplo y presencia</li>
+        <li style="--w:74%">Gestión con datos</li>
+        <li style="--w:92%">Equipos que ejecutan</li>
+      </ol>
+    </figure>
+    <blockquote class="frase revelar ancho">La calidad de una operación rara vez supera la calidad de sus líderes.</blockquote>
+  </div>
+</section>
+
+<!-- 11 -->
+<section class="pantalla" id="pilar-4" data-titulo="Pilar 4 · Despliegue">
+  <div class="contenido">
+    <p class="sobretitulo revelar">Pilar 4</p>
+    <h2 class="revelar">Despliegue Estratégico</h2>
+    <p class="objetivo revelar"><i data-i="objetivo"></i>Asegurar que la visión se transforme en conducta operativa.</p>
+    <ol class="cascada revelar" aria-label="Cascada de despliegue">
+      <li>Visión</li><li>Gerencia</li><li>Jefaturas</li><li>Supervisión</li><li>Operación</li><li class="fin">Resultados</li>
+    </ol>
+    <blockquote class="frase revelar">Toda transformación fracasa cuando la estrategia no llega al piso operativo.</blockquote>
+  </div>
+</section>
+
+<!-- 12 -->
+<section class="pantalla" id="gobierno" data-titulo="Gobierno del cambio">
+  <div class="contenido">
+    <p class="sobretitulo revelar">Gobierno del cambio</p>
+    <h2 class="revelar">Un ritmo que sostiene la ejecución</h2>
+    <ol class="rituales">
+      <li class="tarjeta revelar"><span class="frecuencia">Diario</span><i data-i="reloj"></i><h3>Reunión de arranque por turno</h3><p>15 minutos en el piso: desvíos del día anterior, foco del turno.</p></li>
+      <li class="tarjeta revelar"><span class="frecuencia">Semanal</span><i data-i="datos"></i><h3>Revisión de indicadores</h3><p>Jefaturas y supervisión: tablero, causas y acciones con dueño.</p></li>
+      <li class="tarjeta revelar"><span class="frecuencia">Mensual</span><i data-i="bandera"></i><h3>Comité de transformación</h3><p>Gerencias: avance de iniciativas, beneficios y bloqueos.</p></li>
+      <li class="tarjeta revelar"><span class="frecuencia">Trimestral</span><i data-i="objetivo"></i><h3>Revisión estratégica</h3><p>Ajuste del roadmap y de las metas por horizonte.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- 13 -->
+<section class="pantalla" id="personas" data-titulo="Las personas">
+  <div class="contenido pilar-grid">
+    <div class="revelar">
+      <p class="sobretitulo">Factor crítico de éxito</p>
+      <h2>Las personas</h2>
+      <p class="bajada">Ninguna transformación se sostiene si los equipos no la sienten propia.</p>
+      <div class="mini-kpis">
+        <div class="kpi chico" data-ejemplo><p class="num" data-kpi="ausentismo">11 %</p><p>ausentismo</p></div>
+        <div class="kpi chico" data-ejemplo><p class="num" data-kpi="rotacion">32 %</p><p>rotación anual</p></div>
+      </div>
+    </div>
+    <figure class="orbita revelar" aria-label="Las personas en el centro, rodeadas por seis factores">
+      <span class="nucleo"><i data-i="personas"></i>Personas</span>
+      <span class="sat s1"><i data-i="rayo"></i>Motivación</span>
+      <span class="sat s2"><i data-i="trofeo"></i>Reconocimiento</span>
+      <span class="sat s3"><i data-i="apoyo"></i>Cercanía</span>
+      <span class="sat s4"><i data-i="escala"></i>Desarrollo</span>
+      <span class="sat s5"><i data-i="cultura"></i>Sentido de propósito</span>
+      <span class="sat s6"><i data-i="lider"></i>Liderazgo presente</span>
+    </figure>
+  </div>
+</section>
+
+<!-- 14 -->
+<section class="pantalla" id="impacto" data-titulo="Impacto esperado">
+  <div class="contenido">
+    <p class="sobretitulo revelar">Impacto esperado</p>
+    <h2 class="revelar">Tres horizontes</h2>
+    <ol class="horizontes">
+      <li class="horizonte revelar"><span class="dias">90 días</span><h3>Ver</h3>
+        <ul><li>Visibilidad operacional</li><li>Identificación de restricciones</li><li>Priorización de mejoras</li></ul>
+        <p class="meta" data-ejemplo data-meta="0" data-h="d90">Salidas a tiempo: 86 %</p></li>
+      <li class="horizonte revelar"><span class="dias">180 días</span><h3>Ejecutar</h3>
+        <ul><li>Mayor disciplina operativa</li><li>Mejora de productividad</li><li>Mejora de calidad</li></ul>
+        <p class="meta" data-ejemplo data-meta="0" data-h="d180">Salidas a tiempo: 91 %</p></li>
+      <li class="horizonte revelar"><span class="dias">365 días</span><h3>Consolidar</h3>
+        <ul><li>Cambio de percepción</li><li>Operación alineada</li><li>Recuperación de flujo</li><li>CIT como referencia operacional</li></ul>
+        <p class="meta" data-ejemplo data-meta="0" data-h="d365">Salidas a tiempo: 96 %</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- 15 -->
+<section class="pantalla" id="metricas" data-titulo="Métricas de éxito">
+  <div class="contenido">
+    <p class="sobretitulo revelar">Métricas de éxito</p>
+    <h2 class="revelar">Cómo vamos a medir el avance</h2>
+    <div class="tabla-envoltorio revelar" data-ejemplo>
+      <table class="tabla">
+        <caption class="sr-only">Indicadores, valor de hoy y metas a 90, 180 y 365 días</caption>
+        <thead><tr><th scope="col">Indicador</th><th scope="col">Hoy</th><th scope="col">90 días</th><th scope="col">180 días</th><th scope="col">365 días</th></tr></thead>
+        <tbody id="tabla-metas"></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- 16 -->
+<section class="pantalla" id="riesgos" data-titulo="Riesgos">
+  <div class="contenido">
+    <p class="sobretitulo revelar">Riesgos y mitigación</p>
+    <h2 class="revelar">Lo que puede frenar la transformación</h2>
+    <div class="riesgos">
+      <article class="riesgo revelar"><p class="r"><i data-i="alerta"></i>La urgencia diaria diluye las iniciativas</p><p class="m"><i data-i="escudo"></i>Rituales fijos y un dueño por iniciativa</p></article>
+      <article class="riesgo revelar"><p class="r"><i data-i="alerta"></i>Resistencia al cambio</p><p class="m"><i data-i="escudo"></i>Supervisión involucrada desde el diagnóstico y ganancias rápidas visibles</p></article>
+      <article class="riesgo revelar"><p class="r"><i data-i="alerta"></i>Datos poco confiables</p><p class="m"><i data-i="escudo"></i>Fuente única y definiciones de KPI acordadas en los primeros 30 días</p></article>
+      <article class="riesgo revelar"><p class="r"><i data-i="alerta"></i>Sobrecarga de los líderes</p><p class="m"><i data-i="escudo"></i>Priorización impacto-esfuerzo: pocas iniciativas en simultáneo</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- 17 -->
+<section class="pantalla" id="conecta" data-titulo="La pieza que conecta">
+  <div class="contenido pilar-grid">
+    <div class="revelar">
+      <p class="sobretitulo">La pieza que conecta todo</p>
+      <h2>¿Cómo garantizar que la transformación ocurra?</h2>
+      <p class="bajada">Los cuatro pilares necesitan una <strong>capacidad organizacional dedicada</strong>: alguien que sostenga la transformación todos los días, más allá de la urgencia operativa.</p>
+    </div>
+    <figure class="hub revelar" aria-label="Capacidad dedicada de transformación conectada a seis funciones">
+      <span class="nucleo"><i data-i="conexion"></i>Capacidad de transformación</span>
+      <span class="sat s1">Acompaña a la Gerencia de Procesamiento</span>
+      <span class="sat s2">Trabaja junto a la Gerencia Operativa</span>
+      <span class="sat s3">Impulsa la ejecución</span>
+      <span class="sat s4">Desarrolla liderazgo</span>
+      <span class="sat s5">Construye indicadores</span>
+      <span class="sat s6">Asegura alineación estratégica</span>
+    </figure>
+  </div>
+</section>
+
+<!-- 18 -->
+<section class="pantalla cierre" id="conclusion" data-titulo="Conclusión">
+  <div class="contenido">
+    <p class="sobretitulo revelar">Conclusión ejecutiva</p>
+    <h2 class="revelar">Transformar CIT no requiere más control.</h2>
+    <p class="cierre-sub revelar">Requiere <strong>más liderazgo</strong>, <strong>más información</strong> y <strong>mejor ejecución</strong>.</p>
+    <p class="bajada revelar">La oportunidad no es corregir desvíos. La oportunidad es construir la operación que CIT siempre estuvo diseñada para ser.</p>
+    <h3 class="revelar">Lo que necesitamos para empezar</h3>
+    <ol class="pedidos">
+      <li class="revelar"><span>1</span>Validar el diagnóstico con la Gerencia de Procesamiento y la Gerencia Operativa.</li>
+      <li class="revelar"><span>2</span>Habilitar la capacidad dedicada de transformación.</li>
+      <li class="revelar"><span>3</span>Acordar el tablero de 90 días y su ritual de seguimiento.</li>
+    </ol>
+    <p class="cta revelar"><i data-i="bandera"></i>Transformar la operación para liberar todo su potencial.</p>
+    <a class="volver" href="#inicio"><i data-i="arriba"></i>Volver al inicio</a>
+  </div>
+</section>
+
+</main>
+
+<nav class="navegador" aria-label="Avanzar y retroceder">
+  <button class="btn-icono" id="btn-anterior" type="button" aria-label="Pantalla anterior"><i data-i="arriba"></i></button>
+  <span id="nav-contador" aria-live="polite">1 / 18</span>
+  <button class="btn-icono" id="btn-siguiente" type="button" aria-label="Pantalla siguiente"><i data-i="abajo"></i></button>
+</nav>
+
+<dialog class="indice" id="dlg-indice" aria-labelledby="indice-t">
+  <div class="indice-cab"><h2 id="indice-t">Índice</h2>
+    <button class="btn-icono" id="btn-cerrar-indice" type="button" aria-label="Cerrar índice"><i data-i="cerrar"></i></button></div>
+  <ol class="indice-lista" id="indice-lista"></ol>
+  <p class="indice-ayuda">Teclas: <kbd>→</kbd> <kbd>↓</kbd> siguiente · <kbd>←</kbd> <kbd>↑</kbd> anterior · <kbd>P</kbd> cambia de modo · <kbd>D</kbd> índice · <kbd>F</kbd> pantalla completa · <kbd>Esc</kbd> cierra</p>
+</dialog>
+
+<script src="js/iconos.js"></script>
+<script src="js/datos.js"></script>
+<script src="js/presentacion.js"></script>
+</body>
+</html>

@@ -1,5 +1,5 @@
 /* Transformación Operativa CIT — estilos.
-   Tokens del Design System Cartesian de Andreani (D-007, D-039).
+   Tokens del Design System Cartesian de Andreani (D-007, D-045; reglas en la memoria: reglas/paleta-andreani.md).
    D-045: identidad = rojo de marca + blanco + grises. Azul, naranja y amarillo son
    semánticos (info / warning / caution) y no se usan como decoración; verde solo success. */
 :root {
@@ -24,6 +24,7 @@
   --c-font-family-body: Roboto, "Segoe UI", system-ui, -apple-system, sans-serif;
   --shadow-bottom-subtle: 0 1px 2px #4e555e40;
   --shadow-bottom-regular: 0 2px 2px #4e555e40;
+  --shadow-drawer: 3px 0 1px #0000001a;
   /* Provisorio (D-045 R11): el DS no define valor para shadow-focus-regular.
      Anillo doble blanco + grafito: visible sobre fondos claros, oscuros y rojos. */
   --shadow-focus-regular: 0 0 0 2px var(--c-gray-000), 0 0 0 4px var(--c-gray-900);
@@ -59,26 +60,30 @@ a { color: var(--c-red-700); }
 .progreso-barra { height: 100%; width: 0; background: var(--c-red-600); transition: width 200ms linear; }
 
 /* Menú lateral */
+/* Drawer del DS en modo claro: color.surface + shadow-drawer, texto color.text,
+   seleccionado = surface.primary.subtle + borde primary (D-045). */
 .menu {
   position: fixed; top: 0; bottom: 0; left: 0; width: 248px; z-index: 40;
-  background: var(--c-gray-900); color: var(--c-color-text-inverse);
+  background: var(--c-color-surface); color: var(--c-color-text);
+  border-right: 1px solid var(--c-gray-100); box-shadow: var(--shadow-drawer);
   display: flex; flex-direction: column; padding: var(--c-spacing-6) 0 var(--c-spacing-4);
   transition: transform var(--transicion);
 }
-.menu-marca { padding: 0 var(--c-spacing-5) var(--c-spacing-5); border-bottom: 1px solid #ffffff26; }
-.logo-texto { display: block; font-family: var(--c-font-family-headline); font-weight: 700; font-size: 24px; line-height: 28px; color: #fff; letter-spacing: .3px; }
+.menu-marca { padding: 0 var(--c-spacing-5) var(--c-spacing-5); border-bottom: 1px solid var(--c-gray-100); }
+.logo-texto { display: block; font-family: var(--c-font-family-headline); font-weight: 700; font-size: 24px; line-height: 28px; color: var(--c-red-600); letter-spacing: .3px; }
 .logo-texto::before { content: ""; display: inline-block; width: 12px; height: 12px; margin-right: var(--c-spacing-2); background: var(--c-red-600); border-radius: 2px; }
-.menu-proyecto { display: block; margin-top: var(--c-spacing-1); font-size: 14px; line-height: 20px; color: var(--c-gray-200); }
+.menu-proyecto { display: block; margin-top: var(--c-spacing-1); font-size: 14px; line-height: 20px; color: var(--c-color-text); }
 .menu nav { flex: 1; overflow-y: auto; padding: var(--c-spacing-3) 0; }
 .menu-lista a {
   display: flex; align-items: center; gap: var(--c-spacing-3); min-height: 36px;
-  padding: var(--c-spacing-1) var(--c-spacing-5); color: var(--c-gray-200);
+  padding: var(--c-spacing-1) var(--c-spacing-5); color: var(--c-color-text);
   text-decoration: none; font-size: 14px; line-height: 20px; border-left: 3px solid transparent;
 }
-.menu-lista a:hover { color: #fff; background: #ffffff14; }
-.menu-lista .n { font-size: 12px; width: 20px; color: var(--c-gray-300); font-variant-numeric: tabular-nums; }
-.menu-lista a[aria-current="true"] { color: #fff; border-left-color: var(--c-red-600); background: #ffffff1f; font-weight: 500; }
-.menu-pie { padding: var(--c-spacing-3) var(--c-spacing-5) 0; font-size: 12px; line-height: 16px; color: var(--c-gray-300); }
+.menu-lista a:hover { color: var(--c-color-text-strong); background: var(--c-gray-50); }
+.menu-lista .n { font-size: 12px; width: 20px; color: var(--c-color-text); font-variant-numeric: tabular-nums; }
+.menu-lista a[aria-current="true"] { color: var(--c-red-700); border-left-color: var(--c-red-600); background: var(--c-red-50); font-weight: 500; }
+.menu-lista a[aria-current="true"] .n { color: var(--c-red-700); }
+.menu-pie { padding: var(--c-spacing-3) var(--c-spacing-5) 0; font-size: 12px; line-height: 16px; color: var(--c-color-text); border-top: 1px solid var(--c-gray-100); }
 
 /* Controles */
 .controles {
@@ -373,7 +378,7 @@ kbd { font: 500 12px/16px var(--c-font-family-body); border: 1px solid var(--c-g
 }
 @media (max-width: 1023px) {
   :root { --menu-ancho: 0px; }
-  .menu { width: 280px; transform: translateX(-100%); box-shadow: 3px 0 1px #0000001a; }
+  .menu { width: 280px; transform: translateX(-100%); }
   .menu.abierto { transform: none; }
   .solo-movil { display: inline-flex; }
   .controles { left: var(--c-spacing-3); right: var(--c-spacing-3); top: var(--c-spacing-3); }

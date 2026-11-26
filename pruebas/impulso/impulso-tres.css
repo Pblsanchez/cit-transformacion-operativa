@@ -1,0 +1,85 @@
+/* Impulso Operativo en 3 pantallas: Qué · Cómo · Dónde (T-008 E10). Va después de impulso.css. Paleta D-045. */
+
+/* Guía de las 3 partes */
+.tramo { display: flex; flex-wrap: wrap; gap: var(--c-spacing-2); margin-bottom: var(--c-spacing-5); }
+.tramo li { display: inline-flex; align-items: center; gap: var(--c-spacing-2); padding: var(--c-spacing-1) var(--c-spacing-4) var(--c-spacing-1) var(--c-spacing-1); border: 1px solid var(--c-gray-200); border-radius: var(--c-border-radius-xlarge); background: var(--c-color-surface); color: var(--c-color-text); font: 500 14px/20px var(--c-font-family-body); }
+.tramo span { width: 24px; height: 24px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; background: var(--c-gray-100); color: var(--c-gray-800); font-size: 12px; font-weight: 700; }
+.tramo li[aria-current="step"] { background: var(--c-red-600); border-color: var(--c-red-600); color: #fff; }
+.tramo li[aria-current="step"] span { background: #fff; color: var(--c-red-700); }
+
+/* QUÉ: título + gráfico a la izquierda, es / no es a la derecha */
+.que-grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: var(--c-spacing-7); align-items: start; }
+.que-izq .bajada { margin-bottom: var(--c-spacing-4); font-size: 18px; line-height: 28px; }
+.que-izq .hub { width: min(100%, 440px); margin: 0 auto; }
+.esno-apilado { grid-template-columns: 1fr; gap: var(--c-spacing-4); }
+.esno-apilado .tarjeta { padding: var(--c-spacing-5) var(--c-spacing-5) var(--c-spacing-3); }
+.esno-apilado h3 { margin-bottom: var(--c-spacing-2); }
+.esno-apilado li { font-size: 16px; line-height: 22px; padding: var(--c-spacing-2) 0; }
+.frase-chica { margin-top: var(--c-spacing-6); font-size: 22px; line-height: 30px; padding: var(--c-spacing-4) var(--c-spacing-5); }
+
+/* Gráfico vivo: las funciones entran y salen de la capacidad de impulso */
+.hub-vivo .hub-lineas { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; overflow: visible; }
+.hub-vivo .hub-lineas line { stroke: var(--c-gray-200); stroke-width: 1.5; stroke-dasharray: 4 5; vector-effect: non-scaling-stroke; fill: none; }
+.hub-vivo .nucleo, .hub-vivo .sat { z-index: 2; }
+.hub-vivo .pulso { position: absolute; left: 50%; top: 50%; width: 10px; height: 10px; margin: -5px 0 0 -5px; border-radius: 50%; z-index: 1; opacity: 0; pointer-events: none; }
+.hub-vivo .pulso.sale { background: var(--c-red-600); box-shadow: 0 0 0 3px var(--c-red-100); }
+.hub-vivo .pulso.entra { background: var(--c-gray-700); box-shadow: 0 0 0 3px var(--c-gray-100); }
+
+.hub-vivo.visible::before { animation: hub-giro 60s linear infinite; }
+.hub-vivo.visible .hub-lineas line { animation: hub-flujo 1.6s linear infinite; }
+.hub-vivo.visible .nucleo { animation: hub-latido 2.4s ease-in-out infinite; }
+.hub-vivo.visible .pulso { animation-duration: 4.8s; animation-iteration-count: infinite; animation-timing-function: cubic-bezier(.45, 0, .55, 1); }
+.hub-vivo.visible .sat { animation: hub-llega 4.8s ease-in-out infinite; }
+
+.hub-vivo.visible .sale.k1 { animation-name: sale1; animation-delay: 0s; }    .hub-vivo.visible .entra.k1 { animation-name: entra1; animation-delay: 2.4s; }
+.hub-vivo.visible .sale.k2 { animation-name: sale2; animation-delay: .8s; }   .hub-vivo.visible .entra.k2 { animation-name: entra2; animation-delay: 3.2s; }
+.hub-vivo.visible .sale.k3 { animation-name: sale3; animation-delay: 1.6s; }  .hub-vivo.visible .entra.k3 { animation-name: entra3; animation-delay: 4s; }
+.hub-vivo.visible .sale.k4 { animation-name: sale4; animation-delay: 2.4s; }  .hub-vivo.visible .entra.k4 { animation-name: entra4; animation-delay: 4.8s; }
+.hub-vivo.visible .sale.k5 { animation-name: sale5; animation-delay: 3.2s; }  .hub-vivo.visible .entra.k5 { animation-name: entra5; animation-delay: 5.6s; }
+.hub-vivo.visible .sale.k6 { animation-name: sale6; animation-delay: 4s; }    .hub-vivo.visible .entra.k6 { animation-name: entra6; animation-delay: 6.4s; }
+.hub-vivo.visible .s1 { animation-delay: 0s; }   .hub-vivo.visible .s2 { animation-delay: .8s; }  .hub-vivo.visible .s3 { animation-delay: 1.6s; }
+.hub-vivo.visible .s4 { animation-delay: 2.4s; } .hub-vivo.visible .s5 { animation-delay: 3.2s; } .hub-vivo.visible .s6 { animation-delay: 4s; }
+
+@keyframes hub-giro { to { transform: rotate(360deg); } }
+@keyframes hub-flujo { to { stroke-dashoffset: -18; } }
+@keyframes hub-latido { 0%, 100% { box-shadow: 0 0 0 12px var(--c-gray-100); } 50% { box-shadow: 0 0 0 18px var(--c-red-50); } }
+@keyframes hub-llega {
+  0%, 30%, 58%, 100% { transform: translate(-50%, -50%); box-shadow: var(--shadow-bottom-subtle); }
+  40% { transform: translate(-50%, -50%) scale(1.05); box-shadow: 0 0 0 4px var(--c-red-50), var(--shadow-bottom-regular); }
+}
+@keyframes sale1 { 0% { left: 50%; top: 50%; opacity: 0; } 8% { opacity: 1; } 40% { left: 50%; top: 10%; opacity: 1; } 46%, 100% { left: 50%; top: 10%; opacity: 0; } }
+@keyframes sale2 { 0% { left: 50%; top: 50%; opacity: 0; } 8% { opacity: 1; } 40% { left: 86%; top: 30%; opacity: 1; } 46%, 100% { left: 86%; top: 30%; opacity: 0; } }
+@keyframes sale3 { 0% { left: 50%; top: 50%; opacity: 0; } 8% { opacity: 1; } 40% { left: 86%; top: 70%; opacity: 1; } 46%, 100% { left: 86%; top: 70%; opacity: 0; } }
+@keyframes sale4 { 0% { left: 50%; top: 50%; opacity: 0; } 8% { opacity: 1; } 40% { left: 50%; top: 90%; opacity: 1; } 46%, 100% { left: 50%; top: 90%; opacity: 0; } }
+@keyframes sale5 { 0% { left: 50%; top: 50%; opacity: 0; } 8% { opacity: 1; } 40% { left: 14%; top: 70%; opacity: 1; } 46%, 100% { left: 14%; top: 70%; opacity: 0; } }
+@keyframes sale6 { 0% { left: 50%; top: 50%; opacity: 0; } 8% { opacity: 1; } 40% { left: 14%; top: 30%; opacity: 1; } 46%, 100% { left: 14%; top: 30%; opacity: 0; } }
+@keyframes entra1 { 0% { left: 50%; top: 10%; opacity: 0; } 8% { opacity: 1; } 40% { left: 50%; top: 50%; opacity: 1; } 46%, 100% { left: 50%; top: 50%; opacity: 0; } }
+@keyframes entra2 { 0% { left: 86%; top: 30%; opacity: 0; } 8% { opacity: 1; } 40% { left: 50%; top: 50%; opacity: 1; } 46%, 100% { left: 50%; top: 50%; opacity: 0; } }
+@keyframes entra3 { 0% { left: 86%; top: 70%; opacity: 0; } 8% { opacity: 1; } 40% { left: 50%; top: 50%; opacity: 1; } 46%, 100% { left: 50%; top: 50%; opacity: 0; } }
+@keyframes entra4 { 0% { left: 50%; top: 90%; opacity: 0; } 8% { opacity: 1; } 40% { left: 50%; top: 50%; opacity: 1; } 46%, 100% { left: 50%; top: 50%; opacity: 0; } }
+@keyframes entra5 { 0% { left: 14%; top: 70%; opacity: 0; } 8% { opacity: 1; } 40% { left: 50%; top: 50%; opacity: 1; } 46%, 100% { left: 50%; top: 50%; opacity: 0; } }
+@keyframes entra6 { 0% { left: 14%; top: 30%; opacity: 0; } 8% { opacity: 1; } 40% { left: 50%; top: 50%; opacity: 1; } 46%, 100% { left: 50%; top: 50%; opacity: 0; } }
+
+/* DÓNDE: presencia por turno y fases con flecha */
+.turnos { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--c-spacing-4); margin-bottom: var(--c-spacing-8); }
+.turnos li { display: grid; grid-template-columns: auto 1fr; column-gap: var(--c-spacing-3); align-items: center; padding: var(--c-spacing-4) var(--c-spacing-5); background: var(--c-color-surface); border: 1px solid var(--c-gray-100); border-left: 4px solid var(--c-red-600); border-radius: var(--c-border-radius-small); box-shadow: var(--shadow-bottom-subtle); }
+.turnos .ic { grid-row: 1 / span 2; color: var(--c-red-600); width: 28px; height: 28px; }
+.turnos strong { font: 500 18px/24px var(--c-font-family-headline); }
+.turnos span { font-size: 14px; line-height: 20px; color: var(--c-color-text); }
+.fases-flecha .horizonte:not(:last-child)::after { content: "›"; position: absolute; right: -28px; top: 50%; transform: translateY(-50%); z-index: 2; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: var(--c-red-600); color: #fff; font: 700 24px/1 var(--c-font-family-headline); box-shadow: 0 0 0 4px var(--c-color-surface); }
+
+@media (max-width: 1023px) {
+  .que-grid, .turnos { grid-template-columns: 1fr; }
+  .fases-flecha .horizonte:not(:last-child)::after { right: auto; left: 50%; top: auto; bottom: -40px; transform: translateX(-50%) rotate(90deg); }
+}
+@media (max-width: 639px) {
+  .hub-vivo .hub-lineas, .hub-vivo .pulso { display: none; }
+  .hub-vivo.visible .sat, .hub-vivo.visible .nucleo, .hub-vivo.visible::before { animation: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hub-vivo .pulso { display: none; }
+  .hub-vivo.visible::before, .hub-vivo.visible .nucleo, .hub-vivo.visible .sat, .hub-vivo.visible .hub-lineas line { animation: none; }
+}
+@media print {
+  .hub-vivo .pulso { display: none; }
+}

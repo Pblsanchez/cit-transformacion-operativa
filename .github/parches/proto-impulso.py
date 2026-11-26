@@ -1,4 +1,4 @@
-# T-008 E10: arma el prototipo pruebas/impulso/index.html (Impulso Operativo en 3 pantallas: Que, Como, Donde)
+# T-008 E10: arma el prototipo pruebas/impulso/index.html solo con Modelo + Impulso Operativo (Que, Como, Donde)
 # a partir de index.html (v1.3) + pruebas/impulso/bloque.html. No toca index.html. Idempotente.
 import hashlib, os, sys
 
@@ -10,7 +10,7 @@ BLOQUE = 'pruebas/impulso/bloque.html'
 DEST = 'pruebas/impulso/index.html'
 INFORME = '.github/parches/resultado-proto-impulso.md'
 SHA_SRC = '45efa408a2c7fb25c56c6029092f4ddd9f076f6d'
-SHA_DEST = 'f04d0226bf4ba4e04c947f7420a8bd9fba2b1b85'
+SHA_DEST = '6c04844ad80679861f47023cd23f50ccc095098a'
 
 def informe(txt):
     with open(INFORME, 'w', encoding='utf-8') as f:
@@ -26,29 +26,35 @@ if blob(raw) != SHA_SRC:
     sys.exit(1)
 src = raw.decode('utf-8')
 bloque = open(BLOQUE, 'rb').read().decode('utf-8')
-i = src.index('<!-- 17 -->')
-j = src.index('<!-- 21 -->')
-out = src[:i] + bloque + '\n' + src[j:].replace('<!-- 21 -->', '<!-- 20 -->', 1)
+a = src.index('<main id="principal">') + len('<main id="principal">')
+m1 = src.index('<!-- 7 -->')
+m2 = src.index('<!-- 8 -->')
+fin = src.index('</main>')
+modelo = src[m1:m2].replace('<!-- 7 -->', '<!-- 1 · MODELO -->', 1)
+out = src[:a] + '\n\n' + modelo + bloque + '\n' + src[fin:]
 reps = [
     ('href="favicon.svg"', 'href="../../favicon.svg"'),
     ('href="css/estilos.css?v=1.3"', 'href="../../css/estilos.css?v=1.3"'),
     ('<link rel="stylesheet" href="css/impulso.css?v=1.3">',
-     '<link rel="stylesheet" href="../../css/impulso.css?v=1.3">\n<link rel="stylesheet" href="impulso-tres.css?v=0.1">\n<meta name="robots" content="noindex">'),
-    ('<title>Transformación Operativa CIT</title>', '<title>Prototipo · Impulso Operativo en 3 pantallas · Transformación Operativa CIT</title>'),
+     '<link rel="stylesheet" href="../../css/impulso.css?v=1.3">\n<link rel="stylesheet" href="impulso-tres.css?v=0.2">\n<meta name="robots" content="noindex">'),
+    ('<title>Transformación Operativa CIT</title>', '<title>Prototipo · Impulso Operativo · Transformación Operativa CIT</title>'),
+    ('<a class="saltar" href="#inicio">', '<a class="saltar" href="#modelo">'),
+    ('<span class="menu-proyecto">Transformación Operativa CIT</span>', '<span class="menu-proyecto">Prototipo · Impulso Operativo</span>'),
     ('src="js/iconos.js?v=1.3"', 'src="../../js/iconos.js?v=1.3"'),
     ('src="js/datos.js?v=1.3"', 'src="../../js/datos.js?v=1.3"'),
     ('src="js/presentacion.js?v=1.3"', 'src="../../js/presentacion.js?v=1.3"'),
-    ('<span id="menu-contador">1 / 21</span>', '<span id="menu-contador">1 / 20</span>'),
-    ('<span id="nav-contador" aria-live="polite">1 / 21</span>', '<span id="nav-contador" aria-live="polite">1 / 20</span>'),
+    ('<span id="menu-contador">1 / 21</span>', '<span id="menu-contador">1 / 4</span>'),
+    ('<span id="nav-contador" aria-live="polite">1 / 21</span>', '<span id="nav-contador" aria-live="polite">1 / 4</span>'),
 ]
-for a, b in reps:
-    if out.count(a) != 1:
-        informe('ERROR: reemplazo no encontrado: ' + a); sys.exit(1)
-    out = out.replace(a, b)
+for x, y in reps:
+    if out.count(x) != 1:
+        informe('ERROR: reemplazo no encontrado: ' + x); sys.exit(1)
+    out = out.replace(x, y)
 data = out.encode('utf-8')
 if blob(data) != SHA_DEST:
     informe('ERROR: el resultado no coincide (SHA ' + blob(data)[:7] + ', se esperaba ' + SHA_DEST[:7] + '). Revisar bloque.html.')
     sys.exit(1)
+os.makedirs(os.path.dirname(DEST), exist_ok=True)
 open(DEST, 'wb').write(data)
 informe('OK: prototipo creado, %d pantallas, %d bytes, SHA %s.' % (out.count('<section class="pantalla'), len(data), SHA_DEST[:7]))
 print('OK')

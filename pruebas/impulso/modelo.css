@@ -1,0 +1,28 @@
+/* Modelo con ejes y flujo de carga (T-008 E10). Va después de estilos.css. Paleta D-045. */
+.templo-flujo { max-width: 1120px; gap: var(--c-spacing-3); }
+.templo-flujo .techo { font-size: 22px; line-height: 26px; padding: var(--c-spacing-4) var(--c-spacing-5); }
+
+.carga { margin: 0; padding: var(--c-spacing-3) var(--c-spacing-4) var(--c-spacing-2); background: var(--c-color-surface); border: 1px solid var(--c-gray-100); border-radius: var(--c-border-radius-small); }
+.carga svg { display: block; width: 100%; height: auto; max-height: 200px; }
+
+.ejes { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--c-spacing-3); }
+.eje { display: flex; flex-direction: column; gap: var(--c-spacing-2); padding: var(--c-spacing-4); background: var(--c-color-surface); border: 1px solid var(--c-gray-100); border-top: 4px solid var(--c-red-600); border-radius: var(--c-border-radius-small); box-shadow: var(--shadow-bottom-subtle); transition: transform 200ms, box-shadow 200ms; }
+.eje:hover { transform: translateY(-3px); box-shadow: var(--shadow-bottom-regular); }
+.eje .nro { font: 500 12px/16px var(--c-font-family-body); letter-spacing: 1.2px; text-transform: uppercase; color: var(--c-red-600); }
+.eje-cab { display: flex; align-items: center; gap: var(--c-spacing-2); }
+.eje-cab .ic { width: 28px; height: 28px; color: var(--c-gray-700); }
+.eje-cab strong { font: 500 17px/22px var(--c-font-family-headline); color: var(--c-color-text-strong); }
+.eje ul { display: grid; gap: var(--c-spacing-1); margin-top: var(--c-spacing-1); padding-top: var(--c-spacing-2); border-top: 1px solid var(--c-gray-100); }
+.eje ul li { position: relative; padding-left: var(--c-spacing-4); font-size: 14px; line-height: 20px; color: var(--c-color-text-strong); }
+.eje ul li::before { content: ""; position: absolute; left: 0; top: 9px; width: 8px; height: 3px; background: var(--c-red-600); }
+
+@media (max-width: 1023px) {
+  .ejes { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 639px) {
+  .ejes { grid-template-columns: 1fr; }
+  .templo-flujo .techo { font-size: 18px; clip-path: none; border-radius: var(--c-border-radius-small); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .eje { transition: none; }
+}

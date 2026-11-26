@@ -10,7 +10,7 @@ BLOQUE = 'pruebas/impulso/bloque.html'
 DEST = 'pruebas/impulso/index.html'
 INFORME = '.github/parches/resultado-proto-impulso.md'
 SHA_SRC = '45efa408a2c7fb25c56c6029092f4ddd9f076f6d'
-SHA_DEST = '16e8cd8642cca276302e6182db9c644cfdc2591f'
+SHA_DEST = 'a41f67336f1d6436d3b36504d116eb31d9349062'
 
 def informe(txt):
     with open(INFORME, 'w', encoding='utf-8') as f:
@@ -26,17 +26,15 @@ if blob(raw) != SHA_SRC:
     sys.exit(1)
 src = raw.decode('utf-8')
 bloque = open(BLOQUE, 'rb').read().decode('utf-8')
+modelo = open('pruebas/impulso/modelo.html', 'rb').read().decode('utf-8')
 a = src.index('<main id="principal">') + len('<main id="principal">')
-m1 = src.index('<!-- 7 -->')
-m2 = src.index('<!-- 8 -->')
 fin = src.index('</main>')
-modelo = src[m1:m2].replace('<!-- 7 -->', '<!-- 1 · MODELO -->', 1)
 out = src[:a] + '\n\n' + modelo + bloque + '\n' + src[fin:]
 reps = [
     ('href="favicon.svg"', 'href="../../favicon.svg"'),
     ('href="css/estilos.css?v=1.3"', 'href="../../css/estilos.css?v=1.3"'),
     ('<link rel="stylesheet" href="css/impulso.css?v=1.3">',
-     '<link rel="stylesheet" href="../../css/impulso.css?v=1.3">\n<link rel="stylesheet" href="impulso-tres.css?v=0.2">\n<meta name="robots" content="noindex">'),
+     '<link rel="stylesheet" href="../../css/impulso.css?v=1.3">\n<link rel="stylesheet" href="impulso-tres.css?v=0.3">\n<link rel="stylesheet" href="modelo.css?v=0.3">\n<meta name="robots" content="noindex">'),
     ('<title>Transformación Operativa CIT</title>', '<title>Prototipo · Impulso Operativo · Transformación Operativa CIT</title>'),
     ('<a class="saltar" href="#inicio">', '<a class="saltar" href="#modelo">'),
     ('<span class="menu-proyecto">Transformación Operativa CIT</span>', '<span class="menu-proyecto">Prototipo · Impulso Operativo</span>'),

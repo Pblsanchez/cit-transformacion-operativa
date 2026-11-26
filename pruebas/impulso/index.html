@@ -80,11 +80,11 @@
           <path id="mv1" d="M548 96 Q620 10 712 30" fill="none"/>
           <path id="mv2" d="M556 110 Q630 60 712 96" fill="none"/>
           <path id="mv3" d="M548 124 Q630 110 712 162" fill="none"/>
-          <!-- paquetes que llegan -->
+          <!-- paquetes que llegan (ocultos hasta su begin: antes de empezar quedarian en 0,0) -->
           <use href="#m-paquete"><animateMotion dur="3.2s" repeatCount="indefinite"><mpath href="#me1"/></animateMotion></use>
-          <use href="#m-paquete"><animateMotion dur="3.6s" begin="1.2s" repeatCount="indefinite"><mpath href="#me2"/></animateMotion></use>
-          <use href="#m-paquete"><animateMotion dur="3s" begin="0.6s" repeatCount="indefinite"><mpath href="#me3"/></animateMotion></use>
-          <use href="#m-paquete"><animateMotion dur="3.4s" begin="2s" repeatCount="indefinite"><mpath href="#me2"/></animateMotion></use>
+          <use href="#m-paquete" opacity="0"><set attributeName="opacity" to="1" begin="1.2s"/><animateMotion dur="3.6s" begin="1.2s" repeatCount="indefinite"><mpath href="#me2"/></animateMotion></use>
+          <use href="#m-paquete" opacity="0"><set attributeName="opacity" to="1" begin="0.6s"/><animateMotion dur="3s" begin="0.6s" repeatCount="indefinite"><mpath href="#me3"/></animateMotion></use>
+          <use href="#m-paquete" opacity="0"><set attributeName="opacity" to="1" begin="2s"/><animateMotion dur="3.4s" begin="2s" repeatCount="indefinite"><mpath href="#me2"/></animateMotion></use>
           <!-- camiones: esperan en el muelle, reciben el paquete y salen -->
           <use href="#m-camion" opacity="0">
             <animateMotion dur="4.5s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.42;0.9;1"><mpath href="#ms1"/></animateMotion>

@@ -1,3 +1,3 @@
 # proto-impulso
 
-OK: prototipo creado, 4 pantallas, 13537 bytes, SHA 16e8cd8.
+OK: prototipo creado, 4 pantallas, 20625 bytes, SHA a41f673.

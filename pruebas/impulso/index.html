@@ -8,7 +8,8 @@
 <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
 <link rel="stylesheet" href="../../css/estilos.css?v=1.3">
 <link rel="stylesheet" href="../../css/impulso.css?v=1.3">
-<link rel="stylesheet" href="impulso-tres.css?v=0.2">
+<link rel="stylesheet" href="impulso-tres.css?v=0.3">
+<link rel="stylesheet" href="modelo.css?v=0.3">
 <meta name="robots" content="noindex">
 <script>document.documentElement.classList.add('js');</script>
 </head>
@@ -40,20 +41,111 @@
 <!-- 1 · MODELO -->
 <section class="pantalla" id="modelo" data-titulo="Modelo">
   <div class="contenido">
-    <p class="sobretitulo revelar">Modelo de transformación</p>
+    <p class="sobretitulo revelar">Modelo</p>
     <h2 class="revelar">Propuesta de abordaje</h2>
-    <div class="templo revelar">
-      <div class="techo">CIT, referencia operacional de la red</div>
-      <div class="pilares">
-        <a class="pilar" href="#pilar-1"><span class="nro">Pilar 1</span><i data-i="lupa"></i><strong>Inteligencia Operativa</strong></a>
-        <a class="pilar" href="#pilar-2"><span class="nro">Pilar 2</span><i data-i="rayo"></i><strong>Transformación y Ejecución</strong></a>
-        <a class="pilar" href="#pilar-3"><span class="nro">Pilar 3</span><i data-i="lider"></i><strong>Desarrollo de Liderazgo</strong></a>
-        <a class="pilar" href="#pilar-4"><span class="nro">Pilar 4</span><i data-i="cascada"></i><strong>Despliegue Estratégico</strong></a>
-      </div>
+    <div class="templo templo-flujo revelar">
+      <div class="techo">Impulsar la mejora operativa</div>
+      <figure class="carga" aria-label="Animación: la carga entra a CIT, se procesa y sale en camiones hacia la red">
+        <svg viewBox="0 0 1000 220" role="img" aria-labelledby="carga-t" id="svg-modelo">
+          <title id="carga-t">La carga entra a CIT, vuela a los camiones y sale a la red</title>
+          <defs>
+            <g id="m-paquete">
+              <rect x="-8" y="-8" width="16" height="16" rx="2" fill="#fbe8e9" stroke="#b6040b" stroke-width="1.5"/>
+              <path d="M-8 -2 H8 M0 -8 V-2" fill="none" stroke="#b6040b" stroke-width="1.5"/>
+            </g>
+            <g id="m-camion">
+              <rect x="-30" y="-22" width="38" height="22" rx="2" fill="#d71920"/>
+              <path d="M8 -15 H18 L24 -8 V0 H8 Z" fill="#1d2023"/>
+              <rect x="13" y="-13" width="6" height="5" fill="#c0c3c8"/>
+              <circle cx="-20" cy="2" r="4" fill="#1d2023"/><circle cx="-4" cy="2" r="4" fill="#1d2023"/><circle cx="16" cy="2" r="4" fill="#1d2023"/>
+            </g>
+          </defs>
+          <!-- rutas de entrada -->
+          <g fill="none" stroke="#c0c3c8" stroke-width="2" stroke-dasharray="6 6">
+            <path id="me1" d="M40 40 C200 40 330 70 450 104"/>
+            <path id="me2" d="M40 110 C200 110 330 110 446 110"/>
+            <path id="me3" d="M40 180 C200 180 330 150 450 116"/>
+          </g>
+          <g fill="#3a4046"><circle cx="40" cy="40" r="8"/><circle cx="40" cy="110" r="8"/><circle cx="40" cy="180" r="8"/></g>
+          <!-- carriles de salida -->
+          <g fill="none" stroke="#dfe1e3" stroke-width="10" stroke-linecap="round">
+            <path d="M690 52 H975"/><path d="M690 118 H975"/><path d="M690 184 H975"/>
+          </g>
+          <g fill="none" stroke="#ffffff" stroke-width="2" stroke-dasharray="10 10">
+            <path d="M700 52 H970"/><path d="M700 118 H970"/><path d="M700 184 H970"/>
+          </g>
+          <path id="ms1" d="M720 50 H990" fill="none"/>
+          <path id="ms2" d="M720 116 H990" fill="none"/>
+          <path id="ms3" d="M720 182 H990" fill="none"/>
+          <path id="mv1" d="M548 96 Q620 10 712 30" fill="none"/>
+          <path id="mv2" d="M556 110 Q630 60 712 96" fill="none"/>
+          <path id="mv3" d="M548 124 Q630 110 712 162" fill="none"/>
+          <!-- paquetes que llegan -->
+          <use href="#m-paquete"><animateMotion dur="3.2s" repeatCount="indefinite"><mpath href="#me1"/></animateMotion></use>
+          <use href="#m-paquete"><animateMotion dur="3.6s" begin="1.2s" repeatCount="indefinite"><mpath href="#me2"/></animateMotion></use>
+          <use href="#m-paquete"><animateMotion dur="3s" begin="0.6s" repeatCount="indefinite"><mpath href="#me3"/></animateMotion></use>
+          <use href="#m-paquete"><animateMotion dur="3.4s" begin="2s" repeatCount="indefinite"><mpath href="#me2"/></animateMotion></use>
+          <!-- camiones: esperan en el muelle, reciben el paquete y salen -->
+          <use href="#m-camion" opacity="0">
+            <animateMotion dur="4.5s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.42;0.9;1"><mpath href="#ms1"/></animateMotion>
+            <animate attributeName="opacity" dur="4.5s" repeatCount="indefinite" values="0;1;1;0;0" keyTimes="0;0.06;0.84;0.9;1"/>
+          </use>
+          <use href="#m-camion" opacity="0">
+            <animateMotion dur="4.5s" begin="1.5s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.42;0.9;1"><mpath href="#ms2"/></animateMotion>
+            <animate attributeName="opacity" dur="4.5s" begin="1.5s" repeatCount="indefinite" values="0;1;1;0;0" keyTimes="0;0.06;0.84;0.9;1"/>
+          </use>
+          <use href="#m-camion" opacity="0">
+            <animateMotion dur="4.5s" begin="3s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.42;0.9;1"><mpath href="#ms3"/></animateMotion>
+            <animate attributeName="opacity" dur="4.5s" begin="3s" repeatCount="indefinite" values="0;1;1;0;0" keyTimes="0;0.06;0.84;0.9;1"/>
+          </use>
+          <!-- paquetes que vuelan de CIT al camión -->
+          <use href="#m-paquete" opacity="0">
+            <animateMotion dur="4.5s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.12;0.38;1"><mpath href="#mv1"/></animateMotion>
+            <animate attributeName="opacity" dur="4.5s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.11;0.13;0.37;0.39;1"/>
+          </use>
+          <use href="#m-paquete" opacity="0">
+            <animateMotion dur="4.5s" begin="1.5s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.12;0.38;1"><mpath href="#mv2"/></animateMotion>
+            <animate attributeName="opacity" dur="4.5s" begin="1.5s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.11;0.13;0.37;0.39;1"/>
+          </use>
+          <use href="#m-paquete" opacity="0">
+            <animateMotion dur="4.5s" begin="3s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.12;0.38;1"><mpath href="#mv3"/></animateMotion>
+            <animate attributeName="opacity" dur="4.5s" begin="3s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.11;0.13;0.37;0.39;1"/>
+          </use>
+          <!-- CIT -->
+          <circle cx="500" cy="110" r="46" fill="none" stroke="#e77579" stroke-width="2">
+            <animate attributeName="r" values="46;78" dur="2.4s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0.8;0" dur="2.4s" repeatCount="indefinite"/>
+          </circle>
+          <circle cx="500" cy="110" r="62" fill="#fbe8e9"/>
+          <circle cx="500" cy="110" r="46" fill="#d71920"/>
+          <text x="500" y="120" text-anchor="middle" fill="#ffffff" font-size="28" font-weight="700" font-family="Rubik, system-ui, sans-serif">CIT</text>
+          <g fill="#4e555e" font-size="14" font-weight="500" font-family="Roboto, system-ui, sans-serif" letter-spacing="1.2">
+            <text x="40" y="214">ENTRA LA CARGA</text>
+            <text x="500" y="214" text-anchor="middle">SE PROCESA SIN FRENOS</text>
+            <text x="975" y="214" text-anchor="end">SALE A LA RED</text>
+          </g>
+        </svg>
+        <figcaption class="sr-only">La carga tiene que fluir: entra a CIT, se procesa y sale a la red sin quedar detenida.</figcaption>
+      </figure>
+      <ol class="ejes" aria-label="Ejes del modelo">
+        <li class="eje"><span class="nro">Eje 1</span><span class="eje-cab"><i data-i="lupa"></i><strong>Inteligencia Operativa</strong></span>
+          <ul><li>Medimos el flujo de punta a punta.</li><li>Detectamos cuellos de botella y desvíos a tiempo.</li></ul></li>
+        <li class="eje"><span class="nro">Eje 2</span><span class="eje-cab"><i data-i="rayo"></i><strong>Transformación y Ejecución</strong></span>
+          <ul><li>Convertimos el diagnóstico en planes de acción.</li><li>Seguimos cada iniciativa hasta ver el resultado.</li></ul></li>
+        <li class="eje"><span class="nro">Eje 3</span><span class="eje-cab"><i data-i="lider"></i><strong>Desarrollo de Liderazgo</strong></span>
+          <ul><li>Acompañamos a jefes y supervisores en el piso.</li><li>Gestión con datos y feedback en cada turno.</li></ul></li>
+        <li class="eje"><span class="nro">Eje 4</span><span class="eje-cab"><i data-i="cascada"></i><strong>Despliegue Estratégico</strong></span>
+          <ul><li>Bajamos la visión de la gerencia al piso.</li><li>Todos los turnos alineados a los mismos objetivos.</li></ul></li>
+      </ol>
       <div class="base">Cultura y personas</div>
     </div>
-    <p class="bajada revelar centrado">Cinco frentes en simultáneo: procesos, indicadores, ejecución, liderazgo y cultura.</p>
   </div>
+  <script>
+    (function () {
+      var s = document.getElementById('svg-modelo');
+      if (s && s.pauseAnimations && window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) s.pauseAnimations();
+    })();
+  </script>
 </section>
 
 <!-- 17 · QUÉ -->
@@ -67,7 +159,7 @@
         <p class="sobretitulo revelar">El qué · quiénes somos</p>
         <h2 class="revelar">Impulso Operativo</h2>
         <p class="objetivo revelar"><i data-i="rayo"></i>Potenciamos la operación, desde el piso y en equipo.</p>
-        <p class="bajada revelar">Los cuatro pilares necesitan una capacidad dedicada que los sostenga todos los días, más allá de la urgencia operativa. Esa capacidad tiene nombre.</p>
+        <p class="bajada revelar">Los ejes del modelo necesitan una capacidad dedicada que los sostenga todos los días, más allá de la urgencia operativa. Esa capacidad tiene nombre.</p>
         <figure class="hub hub-vivo revelar" aria-label="Capacidad de impulso conectada a seis funciones: acompaña a la Gerencia de Procesamiento, trabaja junto a la Gerencia Operativa, impulsa la ejecución, impulsa liderazgo, construye indicadores y asegura alineación estratégica">
           <svg class="hub-lineas" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" focusable="false">
             <line x1="50" y1="50" x2="50" y2="10"/><line x1="50" y1="50" x2="86" y2="30"/><line x1="50" y1="50" x2="86" y2="70"/>

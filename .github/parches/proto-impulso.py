@@ -1,4 +1,4 @@
-# T-008 E10: arma el prototipo pruebas/impulso/index.html solo con Modelo + Impulso Operativo (Que, Como, Donde)
+# T-008 E10: arma el prototipo pruebas/impulso/index.html con Modelo + Impulso Operativo (Que, Como, Donde) + El relato
 # a partir de index.html (v1.3) + pruebas/impulso/bloque.html. No toca index.html. Idempotente.
 import hashlib, os, sys
 
@@ -10,7 +10,7 @@ BLOQUE = 'pruebas/impulso/bloque.html'
 DEST = 'pruebas/impulso/index.html'
 INFORME = '.github/parches/resultado-proto-impulso.md'
 SHA_SRC = '45efa408a2c7fb25c56c6029092f4ddd9f076f6d'
-SHA_DEST = 'afca734fddcb25c91fed8be3d5006e80cf18b790'
+SHA_DEST = 'f7b29ef7af273fd6be94b1dc2b3f265a9ee49034'
 
 def informe(txt):
     with open(INFORME, 'w', encoding='utf-8') as f:
@@ -27,14 +27,15 @@ if blob(raw) != SHA_SRC:
 src = raw.decode('utf-8')
 bloque = open(BLOQUE, 'rb').read().decode('utf-8')
 modelo = open('pruebas/impulso/modelo.html', 'rb').read().decode('utf-8')
+relato = open('pruebas/impulso/relato.html', 'rb').read().decode('utf-8')
 a = src.index('<main id="principal">') + len('<main id="principal">')
 fin = src.index('</main>')
-out = src[:a] + '\n\n' + modelo + bloque + '\n' + src[fin:]
+out = src[:a] + '\n\n' + modelo + bloque + '\n' + relato + '\n' + src[fin:]
 reps = [
     ('href="favicon.svg"', 'href="../../favicon.svg"'),
     ('href="css/estilos.css?v=1.3"', 'href="../../css/estilos.css?v=1.3"'),
     ('<link rel="stylesheet" href="css/impulso.css?v=1.3">',
-     '<link rel="stylesheet" href="../../css/impulso.css?v=1.3">\n<link rel="stylesheet" href="impulso-tres.css?v=0.3">\n<link rel="stylesheet" href="modelo.css?v=0.3">\n<meta name="robots" content="noindex">'),
+     '<link rel="stylesheet" href="../../css/impulso.css?v=1.3">\n<link rel="stylesheet" href="impulso-tres.css?v=0.3">\n<link rel="stylesheet" href="modelo.css?v=0.3">\n<link rel="stylesheet" href="relato.css?v=0.4">\n<meta name="robots" content="noindex">'),
     ('<title>Transformación Operativa CIT</title>', '<title>Prototipo · Impulso Operativo · Transformación Operativa CIT</title>'),
     ('<a class="saltar" href="#inicio">', '<a class="saltar" href="#modelo">'),
     ('<span class="menu-proyecto">Transformación Operativa CIT</span>', '<span class="menu-proyecto">Prototipo · Impulso Operativo</span>'),
@@ -42,8 +43,8 @@ reps = [
     ('src="js/datos.js?v=1.3"', 'src="../../js/datos.js?v=1.3"'),
     ('src="js/presentacion.js?v=1.3"', 'src="../../js/presentacion.js?v=1.3"'),
     ('\n</main>', '\n<!-- presentacion.js usa estas barras sin chequear: sin ellas se corta y la pagina queda en blanco -->\n<div hidden aria-hidden="true"><div id="barra-disenio"></div><div id="barra-real"></div></div>\n</main>'),
-    ('<span id="menu-contador">1 / 21</span>', '<span id="menu-contador">1 / 4</span>'),
-    ('<span id="nav-contador" aria-live="polite">1 / 21</span>', '<span id="nav-contador" aria-live="polite">1 / 4</span>'),
+    ('<span id="menu-contador">1 / 21</span>', '<span id="menu-contador">1 / 5</span>'),
+    ('<span id="nav-contador" aria-live="polite">1 / 21</span>', '<span id="nav-contador" aria-live="polite">1 / 5</span>'),
 ]
 for x, y in reps:
     if out.count(x) != 1:

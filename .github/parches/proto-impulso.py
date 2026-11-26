@@ -10,7 +10,7 @@ BLOQUE = 'pruebas/impulso/bloque.html'
 DEST = 'pruebas/impulso/index.html'
 INFORME = '.github/parches/resultado-proto-impulso.md'
 SHA_SRC = '45efa408a2c7fb25c56c6029092f4ddd9f076f6d'
-SHA_DEST = '6c04844ad80679861f47023cd23f50ccc095098a'
+SHA_DEST = '16e8cd8642cca276302e6182db9c644cfdc2591f'
 
 def informe(txt):
     with open(INFORME, 'w', encoding='utf-8') as f:
@@ -43,6 +43,7 @@ reps = [
     ('src="js/iconos.js?v=1.3"', 'src="../../js/iconos.js?v=1.3"'),
     ('src="js/datos.js?v=1.3"', 'src="../../js/datos.js?v=1.3"'),
     ('src="js/presentacion.js?v=1.3"', 'src="../../js/presentacion.js?v=1.3"'),
+    ('\n</main>', '\n<!-- presentacion.js usa estas barras sin chequear: sin ellas se corta y la pagina queda en blanco -->\n<div hidden aria-hidden="true"><div id="barra-disenio"></div><div id="barra-real"></div></div>\n</main>'),
     ('<span id="menu-contador">1 / 21</span>', '<span id="menu-contador">1 / 4</span>'),
     ('<span id="nav-contador" aria-live="polite">1 / 21</span>', '<span id="nav-contador" aria-live="polite">1 / 4</span>'),
 ]

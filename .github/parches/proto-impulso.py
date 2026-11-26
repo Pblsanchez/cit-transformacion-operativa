@@ -10,7 +10,7 @@ BLOQUE = 'pruebas/impulso/bloque.html'
 DEST = 'pruebas/impulso/index.html'
 INFORME = '.github/parches/resultado-proto-impulso.md'
 SHA_SRC = '45efa408a2c7fb25c56c6029092f4ddd9f076f6d'
-SHA_DEST = 'a41f67336f1d6436d3b36504d116eb31d9349062'
+SHA_DEST = 'afca734fddcb25c91fed8be3d5006e80cf18b790'
 
 def informe(txt):
     with open(INFORME, 'w', encoding='utf-8') as f:

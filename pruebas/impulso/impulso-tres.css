@@ -1,4 +1,4 @@
-/* Impulso Operativo en 3 pantallas: Qué · Cómo · Dónde (T-008 E10). Va después de impulso.css. Paleta D-045. */
+/* Soporte Operativo en 3 pantallas: Qué · Cómo · Dónde (T-008 E10). Va después de impulso.css. Paleta D-045. */
 
 /* Guía de las 3 partes */
 .tramo { display: flex; flex-wrap: wrap; gap: var(--c-spacing-2); margin-bottom: var(--c-spacing-5); }
@@ -11,10 +11,26 @@
 .que-grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: var(--c-spacing-7); align-items: start; }
 .que-izq .bajada { margin-bottom: var(--c-spacing-4); font-size: 18px; line-height: 28px; }
 .que-izq .hub { width: min(100%, 440px); margin: 0 auto; }
-.esno-apilado { grid-template-columns: 1fr; gap: var(--c-spacing-4); }
-.esno-apilado .tarjeta { padding: var(--c-spacing-5) var(--c-spacing-5) var(--c-spacing-3); }
-.esno-apilado h3 { margin-bottom: var(--c-spacing-2); }
-.esno-apilado li { font-size: 16px; line-height: 22px; padding: var(--c-spacing-2) 0; }
+/* Es / No es con el estilo Antes / Ahora (v0.6): oscuro = lo que es, blanco = lo que no es */
+.esno2 { display: grid; gap: var(--c-spacing-4); }
+.esno2-card { border-radius: var(--c-border-radius-medium); padding: var(--c-spacing-5) var(--c-spacing-6); }
+.esno2-si { background: var(--c-gray-900); }
+.esno2-no { background: var(--c-color-surface); border: 1px solid var(--c-gray-100); }
+.esno2 h3 { font: 700 22px/28px var(--c-font-family-headline); margin-bottom: var(--c-spacing-4); }
+.esno2-si h3 { color: #fff; }
+.esno2 ul { display: grid; gap: var(--c-spacing-3); }
+.esno2 li { display: grid; grid-template-columns: 22px 1fr; column-gap: var(--c-spacing-4); align-items: start; }
+.esno2 p { font-size: 15px; line-height: 21px; }
+.esno2 p strong { display: block; font-weight: 500; font-size: 15px; }
+.esno2-si p { color: var(--c-gray-100); }
+.esno2-si p strong { color: #fff; }
+.esno2-no p { color: var(--c-gray-600); }
+.esno2-no p strong { color: var(--c-gray-800); }
+.mk { position: relative; width: 22px; height: 22px; border-radius: 50%; margin-top: 0; }
+.mk-si { background: var(--c-red-600); }
+.mk-si::after { content: ""; position: absolute; left: 7px; top: 4px; width: 6px; height: 10px; border: solid #fff; border-width: 0 2px 2px 0; transform: rotate(45deg); }
+.mk-no { background: var(--c-gray-100); }
+.mk-no::after { content: ""; position: absolute; left: 6px; top: 10px; width: 10px; height: 2px; border-radius: 1px; background: var(--c-gray-500); }
 .frase-chica { margin-top: var(--c-spacing-6); font-size: 22px; line-height: 30px; padding: var(--c-spacing-4) var(--c-spacing-5); }
 
 /* Gráfico vivo: las funciones entran y salen de la capacidad de impulso */
@@ -66,11 +82,19 @@
 .turnos .ic { grid-row: 1 / span 2; color: var(--c-red-600); width: 28px; height: 28px; }
 .turnos strong { font: 500 18px/24px var(--c-font-family-headline); }
 .turnos span { font-size: 14px; line-height: 20px; color: var(--c-color-text); }
-.fases-flecha .horizonte:not(:last-child)::after { content: "›"; position: absolute; right: -28px; top: 50%; transform: translateY(-50%); z-index: 2; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: var(--c-red-600); color: #fff; font: 700 24px/1 var(--c-font-family-headline); box-shadow: 0 0 0 4px var(--c-color-surface); }
+/* Etapas (v0.6): sin conector; numero + pill dentro de la tarjeta, la progresion la marca el color */
+.etapas::before { display: none; }
+.etapas .etapa { padding: var(--c-spacing-5); border-top: 4px solid var(--c-gray-900); }
+.etapas .etapa:nth-child(2) { border-top-color: var(--c-gray-600); }
+.etapas .etapa:nth-child(3) { border-top-color: var(--c-red-600); }
+.etapa-cab { display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--c-spacing-3); }
+.etapa-nro { font: 700 32px/36px var(--c-font-family-headline); color: var(--c-gray-200); }
+.etapas .dias { position: static; transform: none; font-size: 14px; line-height: 18px; padding: var(--c-spacing-1) var(--c-spacing-3); }
+.etapas .etapa h3 { margin-bottom: var(--c-spacing-3); }
 
 @media (max-width: 1023px) {
   .que-grid, .turnos { grid-template-columns: 1fr; }
-  .fases-flecha .horizonte:not(:last-child)::after { right: auto; left: 50%; top: auto; bottom: -40px; transform: translateX(-50%) rotate(90deg); }
+  .etapas { gap: var(--c-spacing-4); }
 }
 @media (max-width: 639px) {
   .hub-vivo .hub-lineas, .hub-vivo .pulso { display: none; }

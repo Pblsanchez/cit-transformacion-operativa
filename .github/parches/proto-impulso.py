@@ -1,4 +1,4 @@
-# T-008 E10: arma el prototipo pruebas/impulso/index.html con Modelo + Impulso Operativo (Que, Como, Donde) + El relato
+# T-008 E10: arma el prototipo pruebas/impulso/index.html con Modelo + Soporte Operativo (Que, Como, Donde) + El relato
 # a partir de index.html (v1.3) + pruebas/impulso/bloque.html. No toca index.html. Idempotente.
 import hashlib, os, sys
 
@@ -10,7 +10,7 @@ BLOQUE = 'pruebas/impulso/bloque.html'
 DEST = 'pruebas/impulso/index.html'
 INFORME = '.github/parches/resultado-proto-impulso.md'
 SHA_SRC = '45efa408a2c7fb25c56c6029092f4ddd9f076f6d'
-SHA_DEST = 'f7b29ef7af273fd6be94b1dc2b3f265a9ee49034'
+SHA_DEST = 'ec24e772c1fc3f83b1c157b5857e18d0c986d753'
 
 def informe(txt):
     with open(INFORME, 'w', encoding='utf-8') as f:
@@ -35,10 +35,10 @@ reps = [
     ('href="favicon.svg"', 'href="../../favicon.svg"'),
     ('href="css/estilos.css?v=1.3"', 'href="../../css/estilos.css?v=1.3"'),
     ('<link rel="stylesheet" href="css/impulso.css?v=1.3">',
-     '<link rel="stylesheet" href="../../css/impulso.css?v=1.3">\n<link rel="stylesheet" href="impulso-tres.css?v=0.3">\n<link rel="stylesheet" href="modelo.css?v=0.3">\n<link rel="stylesheet" href="relato.css?v=0.4">\n<meta name="robots" content="noindex">'),
-    ('<title>Transformación Operativa CIT</title>', '<title>Prototipo · Impulso Operativo · Transformación Operativa CIT</title>'),
+     '<link rel="stylesheet" href="../../css/impulso.css?v=1.3">\n<link rel="stylesheet" href="impulso-tres.css?v=0.5">\n<link rel="stylesheet" href="modelo.css?v=0.3">\n<link rel="stylesheet" href="relato.css?v=0.5">\n<meta name="robots" content="noindex">'),
+    ('<title>Transformación Operativa CIT</title>', '<title>Prototipo · Soporte Operativo · Transformación Operativa CIT</title>'),
     ('<a class="saltar" href="#inicio">', '<a class="saltar" href="#modelo">'),
-    ('<span class="menu-proyecto">Transformación Operativa CIT</span>', '<span class="menu-proyecto">Prototipo · Impulso Operativo</span>'),
+    ('<span class="menu-proyecto">Transformación Operativa CIT</span>', '<span class="menu-proyecto">Prototipo · Soporte Operativo</span>'),
     ('src="js/iconos.js?v=1.3"', 'src="../../js/iconos.js?v=1.3"'),
     ('src="js/datos.js?v=1.3"', 'src="../../js/datos.js?v=1.3"'),
     ('src="js/presentacion.js?v=1.3"', 'src="../../js/presentacion.js?v=1.3"'),

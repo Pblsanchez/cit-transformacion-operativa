@@ -10,7 +10,7 @@ BLOQUE = 'pruebas/impulso/bloque.html'
 DEST = 'pruebas/impulso/index.html'
 INFORME = '.github/parches/resultado-proto-impulso.md'
 SHA_SRC = '45efa408a2c7fb25c56c6029092f4ddd9f076f6d'
-SHA_DEST = '7383c3b131394f9e46436ce895dba827a2c3aee1'
+SHA_DEST = 'd9affe4d51a0f1ce70ec41996cc8ff11ef7d600d'
 
 def informe(txt):
     with open(INFORME, 'w', encoding='utf-8') as f:
@@ -35,7 +35,7 @@ reps = [
     ('href="favicon.svg"', 'href="../../favicon.svg"'),
     ('href="css/estilos.css?v=1.3"', 'href="../../css/estilos.css?v=1.3"'),
     ('<link rel="stylesheet" href="css/impulso.css?v=1.3">',
-     '<link rel="stylesheet" href="../../css/impulso.css?v=1.3">\n<link rel="stylesheet" href="impulso-tres.css?v=0.6">\n<link rel="stylesheet" href="modelo.css?v=0.3">\n<link rel="stylesheet" href="relato.css?v=0.5">\n<meta name="robots" content="noindex">'),
+     '<link rel="stylesheet" href="../../css/impulso.css?v=1.3">\n<link rel="stylesheet" href="impulso-tres.css?v=0.6.1">\n<link rel="stylesheet" href="modelo.css?v=0.3">\n<link rel="stylesheet" href="relato.css?v=0.5">\n<meta name="robots" content="noindex">'),
     ('<title>Transformación Operativa CIT</title>', '<title>Prototipo · Soporte Operativo · Transformación Operativa CIT</title>'),
     ('<a class="saltar" href="#inicio">', '<a class="saltar" href="#modelo">'),
     ('<span class="menu-proyecto">Transformación Operativa CIT</span>', '<span class="menu-proyecto">Prototipo · Soporte Operativo</span>'),

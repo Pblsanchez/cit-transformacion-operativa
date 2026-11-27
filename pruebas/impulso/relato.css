@@ -11,7 +11,18 @@
 .relato-paso li::before { content: ""; position: absolute; left: 0; top: 10px; width: 8px; height: 3px; background: var(--c-red-600); }
 .relato-cita { font-style: italic; color: var(--c-gray-700) !important; padding-left: var(--c-spacing-3); border-left: 3px solid var(--c-red-200); }
 
+.relato-datos { grid-column: 1 / -1; border-left-color: var(--c-gray-900); }
+.relato-datos .relato-n { background: var(--c-red-600); }
+.relato-datos .relato-n .ic { width: 18px; height: 18px; color: #fff; }
+.relato-cifras { grid-template-columns: repeat(5, 1fr) !important; gap: var(--c-spacing-3) !important; }
+.relato-cifras li { padding: var(--c-spacing-3) !important; background: var(--c-gray-50); border: 1px solid var(--c-gray-100); border-radius: var(--c-border-radius-small); display: flex; flex-direction: column; gap: 2px; }
+.relato-cifras li::before { display: none; }
+.relato-cifras strong { font: 700 24px/28px var(--c-font-family-headline); color: var(--c-red-700); }
+.relato-cifras span { font-size: 13px; line-height: 18px; color: var(--c-color-text); }
+.relato-nota { font-size: 13px !important; line-height: 18px !important; color: var(--c-color-text) !important; }
+
 @media (max-width: 1023px) {
+  .relato-cifras { grid-template-columns: 1fr 1fr !important; }
   .relato { grid-template-columns: 1fr; }
 }
 @media print {
